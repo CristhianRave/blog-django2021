@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="../../static/css/styles.css">
+    <script
+      src="https://kit.fontawesome.com/7e5b2d153f.js" crossorigin="anonymous">
+    </script>
+    <script defer src="../../static/index.js"></script>
+</head>
+<body class="grid-container">
+
+<!-- ------------------------------------------------------------ -->
+
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo nav-link">Logo</a>
+            <button class="nav-toggle" aria-label="Abrir menú">
+                <i class="fas f a-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-menu-item">
+                    <a href="{% url 'inicio' %}" class="nav-menu-link nav-link">Inicio</a>
+                </li>
+                
+                <!-- ------------------------------------------------------------ -->                                                              
+                
+                <li class="nav-menu-item">
+                    {% for page in pages %}
+                        <a href="#" class="nav-menu-link nav-link">{{page.1}}</a>
+                        
+                    {% endfor %}
+                </li>
+                
+                <!-- ------------------------------------------------------------ -->
+                
+                <li class="nav-menu-item">
+                    <a href="#" class="nav-menu-link nav-link">Blog</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="#" class="nav-menu-link nav-link">Portfolio</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="#" class="nav-menu-link nav-link ">Sobre mí</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+<!-- ------------------------------------------ -->
+    <aside class="sidebar">
+        Skills
+    </aside>
+<!-- ------------------------------------------ -->
+    <article class="main">
+        <p>
+            {% block content %}
+                <!-- Este contenido viene de tempplates -->
+            
+            {% endblock %}
+        </p>
+    </article>
+<!-- ------------------------------------------ -->
+    <footer class="footer">
+        <p>Proyecto Blog con Django 2021   --    Cristhian Rave</p>
+    </footer>
+<!-- ------------------------------------------ -->
+  </body>
+  </html>
