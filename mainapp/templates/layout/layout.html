@@ -17,35 +17,30 @@
 
     <header class="header">
         <nav class="nav">
-            <a href="#" class="logo nav-link">Logo</a>
+            <a href="/admin" class="logo nav-link">Logo</a>  <!-- Cambiar el enlace -->
             <button class="nav-toggle" aria-label="Abrir menú">
+                <h1>M</h1>
                 <i class="fas f a-bars"></i>
             </button>
             <ul class="nav-menu">
                 <li class="nav-menu-item">
                     <a href="{% url 'inicio' %}" class="nav-menu-link nav-link">Inicio</a>
                 </li>
-                
+                <li class="nav-menu-item">
+                    <a href="{% url 'Blog' %}" class="nav-menu-link nav-link">Blog</a>
+                </li>
+
                 <!-- ------------------------------------------------------------ -->                                                              
                 
                 <li class="nav-menu-item">
                     {% for page in pages %}
-                        <a href="#" class="nav-menu-link nav-link">{{page.1}}</a>
+                        <a href="{% url 'pagina' page.2 %}" class="nav-menu-link nav-link">{{page.1}}</a>
                         
                     {% endfor %}
                 </li>
                 
                 <!-- ------------------------------------------------------------ -->
-                
-                <li class="nav-menu-item">
-                    <a href="#" class="nav-menu-link nav-link">Blog</a>
-                </li>
-                <li class="nav-menu-item">
-                    <a href="#" class="nav-menu-link nav-link">Portfolio</a>
-                </li>
-                <li class="nav-menu-item">
-                    <a href="#" class="nav-menu-link nav-link ">Sobre mí</a>
-                </li>
+
             </ul>
         </nav>
     </header>
@@ -57,7 +52,7 @@
     <article class="main">
         <p>
             {% block content %}
-                <!-- Este contenido viene de tempplates -->
+                <!-- Este contenido viene de templates -->
             
             {% endblock %}
         </p>

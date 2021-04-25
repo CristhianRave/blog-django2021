@@ -10,3 +10,7 @@ def page (request, slug):
     return render (request, 'pages/page.html', {
         "page" : page
     })
+    
+    # -----------------------------------------------------------
+    
+    

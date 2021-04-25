@@ -7,6 +7,8 @@
             
             
 {%  block content %}
+
+    <h1>{{articles.title}}</h1><br>
     <div class="articles">               
         {% for article in articles %}
             {% if article.image != 'null' and article.image.url|length >= 1 %}

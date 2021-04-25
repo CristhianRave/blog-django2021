@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from app_blog.models import Article, Category
 
 # Create your views here.
 
@@ -12,22 +13,15 @@ def index(request):
 
 def blog (request):
 
-    
+    articles = Article.objects.all ()
     return render (request, 'mainapp/blog.html', {
-        'title' : 'Blog'
+        'title' : 'Blog',
+        'articles' : articles
+
     })
     
 # -----------------------------------------------------------
     
-def portfolio (request):
-
-    
-    return render (request, 'mainap/portfolio.html', {
-        'title' : 'Portfolio'
-    })
-
-
-# -----------------------------------------------------------
 
 def about (request):
 
